@@ -1,0 +1,78 @@
+html,body {
+	height: 100%;
+}
+
+#wrap {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -60px;
+	padding: 0 0 60px;
+}
+
+.centered {
+	float: none;
+	margin: 0 auto;
+}
+
+.navbar {
+	border-radius: 0px;
+}
+
+div#content {
+	
+}
+
+td.tape-cell {
+	background-color: #ddd;
+	width: 100px;
+	height: 80px;
+	border: 1px solid #aaa;
+}
+
+td.current-cell {
+	background-color: #FFFF00;
+}
+
+div.cell-container {
+	display: table;
+	height: 100%;
+	position: relative;
+	vertical-align: middle;
+	width: 100%;
+}
+
+div.cell-data {
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+	font-size: xx-large;
+	font-weight: bold;
+	width: 100%;
+}
+
+span.cell-index {
+	bottom: 0;
+	right: 0;
+	position: absolute;
+	right: 0;
+	font-size: small;
+}
+
+textarea {
+	font-family: Courier New, Courier, monospace;
+}
+
+#footer {
+	height: 60px;
+	background-color: #f5f5f5;
+}
+
+.container .credit {
+	margin: 20px 0;
+}
+
+#footer>.container {
+	padding-left: 15px;
+	padding-right: 15px;
+}

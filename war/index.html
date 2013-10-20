@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="brainfuck">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>brainfuck</title>
+
+<link href="/static/lib/bootstrap-3.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="/static/lib/ngProgress.css" rel="stylesheet">
+<link href="/static/style/style.css" rel="stylesheet">
+
+<!--[if lt IE 9]>
+      <script src="/static/lib/bootstrap-3.0.0/assets/js/html5shiv.js"></script>
+      <script src="/static/lib/bootstrap-3.0.0/assets/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+	<div id="wrap">
+		<div class="navbar navbar-default">
+			<div class="container">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#" style="font-family: CourierNew, Courier, monospace;"><strong>brainfuck</strong> <sup><span
+							class="label label-success">beta</span></sup></a>
+				</div>
+			</div>
+		</div>
+
+		<div class="container centered" id="content">			
+			<div class="tabbable">				
+				<ul class="nav nav-tabs">
+					<li class="active"><a href="#interpreter-tab" data-toggle="tab">Interpreter</a></li>
+					<li><a href="#code-gen-tab" data-toggle="tab">Code Gen</a></li>
+				</ul>
+				<div class="tab-content">
+					<div class="tab-pane active" id="interpreter-tab" ng-include="'/static/partial/interpreter.html'" ></div>										
+					<div class="tab-pane" id="code-gen-tab" ng-include="'/static/partial/code-gen.html'"></div>											
+				</div>
+			</div>			
+		</div>
+	</div>
+
+	<div id="footer">
+		<div class="container" align="center">
+			<p class="text-muted credit">
+				&copy; <a href="#">Ashish Prasad</a>, 2013
+			</p>
+		</div>
+	</div>
+
+	<script src="/static/lib/jquery.min.js"></script>
+	<script src="/static/lib/bootstrap-3.0.0/dist/js/bootstrap.min.js"></script>
+	<script src="/static/lib/angular.min.js"></script>
+	<script src="/static/lib/ngProgress.min.js"></script>
+	<script src="/static/js/brainfuck.js"></script>
+	<script src="/static/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<div class="col-md-12" ng-controller="interpreterCtrl">
+	<div class="row">
+		<div class="col-md-6">
+			<h4>Code</h4>
+			<textarea class="form-control" rows="10"
+				placeholder="Type brainfuck code here..." ng-model="code"></textarea>
+			<br />
+			<div class="row" style="padding-left: 15px; padding-right: 15px;">
+				<button type="button" class="btn btn-success btn-sm" ng-click="run()">
+					<span class="glyphicon glyphicon-play"></span> Run
+				</button>
+<!-- 				<a data-toggle="modal" href="#settingsModal" class="btn btn-warning btn-sm"><span -->
+<!-- 					class="glyphicon glyphicon-cog"></span> Settings</a> &nbsp; -->
+<!-- 				<button type="button" class="btn btn-info btn-sm" ng-click="save()"> -->
+<!-- 					<span class="glyphicon glyphicon-floppy-disk"></span> Save -->
+<!-- 				</button> -->
+			</div>
+		</div>
+		<div class="col-md-6">
+			<h4>Output</h4>
+			<div
+				style="color: #C7254E; font-size: 120%; height: 215px; border: 1px solid #ddd; border-radius: 4px; overflow: auto; font-family: Courier New, Courier, monospace;">
+				<div style="padding: 5px 10px 5px 10px;">{{output}}</div>
+			</div>
+		</div>
+	</div>
+	<br />
+	<div class="row">
+		<div class="col-md-12">
+			<h4>Tape</h4>
+			<div align="center">
+				<table class="tape">
+					<tr>
+						<td class="tape-cell" ng-class="{'current-cell': dataPointer==0}">
+							<div class="cell-container">
+								<div class="cell-data">{{tape[slidingWindow + 0] || 0}}</div>
+								<span class="cell-index">{{slidingWindow}}</span>
+							</div>
+						</td>
+						<td class="tape-cell" ng-class="{'current-cell': dataPointer==1}">
+							<div class="cell-container">
+								<div class="cell-data">{{tape[slidingWindow + 1] || 0}}</div>
+								<span class="cell-index">{{slidingWindow + 1}}</span>
+							</div>
+						</td>
+						<td class="tape-cell" ng-class="{'current-cell': dataPointer==2}">
+							<div class="cell-container">
+								<div class="cell-data">{{tape[slidingWindow + 2] || 0}}</div>
+								<span class="cell-index">{{slidingWindow + 2}}</span>
+							</div>
+						</td>
+						<td class="tape-cell" ng-class="{'current-cell': dataPointer==3}">
+							<div class="cell-container">
+								<div class="cell-data">{{tape[slidingWindow + 3] || 0}}</div>
+								<span class="cell-index">{{slidingWindow + 3}}</span>
+							</div>
+						</td>
+						<td class="tape-cell" ng-class="{'current-cell': dataPointer==4}">
+							<div class="cell-container">
+								<div class="cell-data">{{tape[slidingWindow + 4] || 0}}</div>
+								<span class="cell-index">{{slidingWindow + 4}}</span>
+							</div>
+						</td>
+						<td class="tape-cell" ng-class="{'current-cell': dataPointer>=5}">
+							<div class="cell-container">
+								<div class="cell-data">{{tape[slidingWindow + 5] || 0}}</div>
+								<span class="cell-index">{{slidingWindow + 5}}</span>
+							</div>
+						</td>
+						<td class="tape-cell">
+							<div class="cell-container">
+								<div class="cell-data">{{tape[slidingWindow + 6] || 0}}</div>
+								<span class="cell-index">{{slidingWindow + 6}}</span>
+							</div>
+						</td>
+						<td class="tape-cell">
+							<div class="cell-container">
+								<div class="cell-data">{{tape[slidingWindow + 7] || 0}}</div>
+								<span class="cell-index">{{slidingWindow + 7}}</span>
+							</div>
+						</td>
+						<td class="tape-cell">
+							<div class="cell-container">
+								<div class="cell-data">{{tape[slidingWindow + 8] || 0}}</div>
+								<span class="cell-index">{{slidingWindow + 8}}</span>
+							</div>
+						</td>
+						<td class="tape-cell">
+							<div class="cell-container">
+								<div class="cell-data">{{tape[slidingWindow + 9] || 0}}</div>
+								<span class="cell-index">{{slidingWindow + 9}}</span>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+	<!-- Setting Modal -->
+	<div class="modal fade" id="settingsModal" tabindex="-1" role="dialog"
+		aria-labelledby="SettingsModal" aria-hidden="true"
+		data-backdrop="static">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">Settings</h4>
+				</div>
+				<div class="modal-body">
+					<form class="form-horizontal" role="form">
+						<div class="form-group">							
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default">Restore
+						Defaults</button>
+					<button type="button" class="btn btn-primary" data-dismiss="modal">Save
+						& Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
